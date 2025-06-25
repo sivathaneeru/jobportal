@@ -12,7 +12,13 @@ import java.util.Optional;
 @Repository
 public interface BookmarkRepository extends JpaRepository<Bookmark, Long> {
     Optional<Bookmark> findByUserAndJob(User user, Job job);
-    List<Bookmark> findByUser(User user);
+
+    // Page<Bookmark> findByUser(User user, Pageable pageable); // Replaced by version with JOIN FETCH
+
+    // Fetches Bookmarks with their associated Job and User eagerly to avoid N+1 issues when mapping
+    @Query("SELECT b FROM Bookmark b JOIN FETCH b.job j JOIN FETCH b.user u WHERE u = :user")
+    Page<Bookmark> findByUserWithJobAndUserEager(User user, Pageable pageable);
+
     // We might also want a method to find Bookmarks by Job, e.g., to see how many users bookmarked a specific job
     // List<Bookmark> findByJob(Job job);
 }
