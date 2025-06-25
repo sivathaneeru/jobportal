@@ -1,0 +1,43 @@
+I want you to help me build a full-stack web application called "GovJobTrack" using Vue 2 for frontend and Spring Boot with MySQL for backend. The app is a government job alert platform where admins can post job notifications and users can browse, bookmark, and get notified of jobs.
+
+I will manually collect and post job data via the admin panel — no scraping needed for now.
+
+Frontend Requirements (Vue 2):
+
+Home page that lists jobs in card/grid view
+
+Job Detail page with full job info (title, dept, qualification, link, last date)
+
+Admin login page and panel to post/edit/delete jobs
+
+User login/register using JWT
+
+User dashboard to bookmark jobs
+
+Route management using Vue Router
+
+State management using Vuex
+
+Backend Requirements (Spring Boot):
+
+REST APIs for:
+
+User auth with JWT (login, register, role: USER/ADMIN)
+
+Job CRUD (admin only)
+
+Bookmarking jobs for logged-in users
+
+Entities: User, Job, Bookmark
+
+Use Spring Security + JWT
+
+Use MySQL or PostgreSQL
+
+Extra Notes:
+
+Future scope: Add email alerts and Razorpay for premium features
+
+Design should be clean, mobile-friendly, and ad-friendly (for AdSense approval later)
+
+Generate the code in parts, starting with backend entities and controllers, then frontend components. Also provide setup instructions where needed.
